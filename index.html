@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>handson1</title>
+    <Link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Handson Mongo Shell</h1>
+    <h2>Q1.Query the collection "employee" and list all the Documents.</h2>
+    <p><b>Solution-</b>db.employee.find({})
+    </p>
+    <pre>{
+        _id: ObjectId("6544bb58ac0cdc4b87fbf111"),
+        firstName: 'John',
+        lastName: 'Doe',
+        salary: '25000',
+        department: 'HR',
+        lastCompany: 'X',
+        lastSalary: '10000',
+        overallExp: '2',
+        contactInfo: '1234567890',
+        yearGrad: '2016',
+        gradStream: 'CSE'
+      }
+      {
+        _id: ObjectId("6544bb58ac0cdc4b87fbf112"),
+        firstName: 'Rohan',
+        lastName: 'Jame',
+        salary: '30000',
+        department: 'Technical',
+        lastCompany: 'Y',
+        lastSalary: '15000',
+        overallExp: '1',
+        contactInfo: '1234567860',
+        yearGrad: '2015',
+        gradStream: 'CSE'
+      }
+      {
+        _id: ObjectId("6544bb58ac0cdc4b87fbf113"),
+        firstName: 'Jame',
+        lastName: 'Doe',
+        salary: '35000',
+        department: 'Accounts',
+        lastCompany: 'Z',
+        lastSalary: '20000',
+        overallExp: '1',
+        contactInfo: '123567890',
+        yearGrad: '2019',
+        gradStream: 'ECE'
+      }
+      {
+        _id: ObjectId("6544bb58ac0cdc4b87fbf114"),
+        firstName: 'Sao',
+        lastName: 'Avika',
+        salary: '30000',
+        department: 'Sales',
+        lastCompany: 'Y',
+        lastSalary: '15000',
+        overallExp: '2',
+        contactInfo: '1234567860',
+        yearGrad: '2015',
+        gradStream: 'CSE'
+      }
+      {
+        _id: ObjectId("6544bc21ac0cdc4b87fbf115"),
+        firstName: 'Jame',
+        lastName: 'roh',
+        salary: '35000',
+        department: 'Accounts',
+        lastCompany: 'Z',
+        lastSalary: '15000',
+        overallExp: '2',
+        contactInfo: '123567890',
+        yearGrad: '2019',
+        gradStream: 'EEE'
+      }
+      {
+        _id: ObjectId("6544bc21ac0cdc4b87fbf116"),
+        firstName: 'Rohan',
+        lastName: 'Jame',
+        salary: '30000',
+        department: 'Technical',
+        lastCompany: 'Y',
+        lastSalary: '15000',
+        overallExp: '1',
+        contactInfo: '1234567860',
+        yearGrad: '2015',
+        gradStream: 'CSE'
+      }
+      {
+        _id: ObjectId("6544bc21ac0cdc4b87fbf117"),
+        firstName: 'Jame',
+        lastName: 'Doe',
+        salary: '35000',
+        department: 'Accounts',
+        lastCompany: 'Z',
+        lastSalary: '20000',
+        overallExp: '1',
+        contactInfo: '123567890',
+        yearGrad: '2019',
+        gradStream: 'ECE'
+      }
+      {
+        _id: ObjectId("6544bc21ac0cdc4b87fbf118"),
+        firstName: 'Sao',
+        lastName: 'Avika',
+        salary: '30000',
+        department: 'Sales',
+        lastCompany: 'Y',
+        lastSalary: '15000',
+        overallExp: '2',
+        contactInfo: '1234567860',
+        yearGrad: '2015',
+        gradStream: 'CSE'
+      }
+      {
+        _id: ObjectId("6544bc21ac0cdc4b87fbf119"),
+        firstName: 'Jame',
+        lastName: 'Doe',
+        salary: '35000',
+        department: 'Accounts',
+        lastCompany: 'Z',
+        lastSalary: '15000',
+        overallExp: '2',
+        contactInfo: '123567890',
+        yearGrad: '2019',
+        gradStream: 'EEE'
+      }
+      {
+        _id: ObjectId("6544bc21ac0cdc4b87fbf11a"),
+        firstName: 'Rohan',
+        lastName: 'Jame',
+        salary: '30000',
+        department: 'Technical',
+        lastCompany: 'Y',
+        lastSalary: '15000',
+        overallExp: '1',
+        contactInfo: '1234567860',
+        yearGrad: '2015',
+        gradStream: 'CSE'
+      }
+      {
+        _id: ObjectId("6544bc21ac0cdc4b87fbf11b"),
+        firstName: 'Jame',
+        lastName: 'Doe',
+        salary: '35000',
+        department: 'Accounts',
+        lastCompany: 'Z',
+        lastSalary: '20000',
+        overallExp: '1',
+        contactInfo: '123567890',
+        yearGrad: '2019',
+        gradStream: 'ECE'
+      }
+      {
+        _id: ObjectId("6544bc21ac0cdc4b87fbf11c"),
+        firstName: 'Sao',
+        lastName: 'Avika',
+        salary: '30000',
+        department: 'Sales',
+        lastCompany: 'Y',
+        lastSalary: '15000',
+        overallExp: '2',
+        contactInfo: '1234567860',
+        yearGrad: '2015',
+        gradStream: 'CSE'
+      }
+      {
+        _id: ObjectId("6544bc21ac0cdc4b87fbf11d"),
+        firstName: 'Jame',
+        lastName: 'Doe',
+        salary: '35000',
+        department: 'Accounts',
+        lastCompany: 'Z',
+        lastSalary: '15000',
+        overallExp: '2',
+        contactInfo: '123567890',
+        yearGrad: '2019',
+        gradStream: 'EEE'
+      }</pre>
+      <h2>Q2.Query the collection "employee" and list all the employees who are having salary more than 30000.</h2>
+      <p><b>Solution-</b>db.employee.find({"salary":{$gt:"30000"}})</p>
+      <pre>
+        {
+            _id: ObjectId("6544bb58ac0cdc4b87fbf113"),
+            firstName: 'Jame',
+            lastName: 'Doe',
+            salary: '35000',
+            department: 'Accounts',
+            lastCompany: 'Z',
+            lastSalary: '20000',
+            overallExp: '1',
+            contactInfo: '123567890',
+            yearGrad: '2019',
+            gradStream: 'ECE'
+          }
+          {
+            _id: ObjectId("6544bc21ac0cdc4b87fbf115"),
+            firstName: 'Jame',
+            lastName: 'roh',
+            salary: '35000',
+            department: 'Accounts',
+            lastCompany: 'Z',
+            lastSalary: '15000',
+            overallExp: '2',
+            contactInfo: '123567890',
+            yearGrad: '2019',
+            gradStream: 'EEE'
+          }
+          {
+            _id: ObjectId("6544bc21ac0cdc4b87fbf117"),
+            firstName: 'Jame',
+            lastName: 'Doe',
+            salary: '35000',
+            department: 'Accounts',
+            lastCompany: 'Z',
+            lastSalary: '20000',
+            overallExp: '1',
+            contactInfo: '123567890',
+            yearGrad: '2019',
+            gradStream: 'ECE'
+          }
+          {
+            _id: ObjectId("6544bc21ac0cdc4b87fbf119"),
+            firstName: 'Jame',
+            lastName: 'Doe',
+            salary: '35000',
+            department: 'Accounts',
+            lastCompany: 'Z',
+            lastSalary: '15000',
+            overallExp: '2',
+            contactInfo: '123567890',
+            yearGrad: '2019',
+            gradStream: 'EEE'
+          }
+          {
+            _id: ObjectId("6544bc21ac0cdc4b87fbf11b"),
+            firstName: 'Jame',
+            lastName: 'Doe',
+            salary: '35000',
+            department: 'Accounts',
+            lastCompany: 'Z',
+            lastSalary: '20000',
+            overallExp: '1',
+            contactInfo: '123567890',
+            yearGrad: '2019',
+            gradStream: 'ECE'
+          }
+          {
+            _id: ObjectId("6544bc21ac0cdc4b87fbf11d"),
+            firstName: 'Jame',
+            lastName: 'Doe',
+            salary: '35000',
+            department: 'Accounts',
+            lastCompany: 'Z',
+            lastSalary: '15000',
+            overallExp: '2',
+            contactInfo: '123567890',
+            yearGrad: '2019',
+            gradStream: 'EEE'
+          }
+      </pre>
+      <h2>Q3.Query the collection "employee" and list all the  employess who are having exprience more than 2 years.</h2>
+      <p><b>Solution-</b>db.employee.find({"overallExp":{$gt:"2"}})</p>
+      <pre>There are no overall exprience above 2 years.</pre>
+
+      <h2>Q4.Query the collection "employee" and list all the  employees who are graduated after 2015 and having exprience more than 1years.</h2>
+      <p>db.employee.find({ "yearGrad": {$gt: "2015"},  "overallExp":{$gt: "1" }})</p>
+      <pre>{
+        _id: ObjectId("6544bb58ac0cdc4b87fbf111"),
+        firstName: 'John',
+        lastName: 'Doe',
+        salary: '25000',
+        department: 'HR',
+        lastCompany: 'X',
+        lastSalary: '10000',
+        overallExp: '2',
+        contactInfo: '1234567890',
+        yearGrad: '2016',
+        gradStream: 'CSE'
+      }
+      {
+        _id: ObjectId("6544bc21ac0cdc4b87fbf115"),
+        firstName: 'Jame',
+        lastName: 'roh',
+        salary: '35000',
+        department: 'Accounts',
+        lastCompany: 'Z',
+        lastSalary: '15000',
+        overallExp: '2',
+        contactInfo: '123567890',
+        yearGrad: '2019',
+        gradStream: 'EEE'
+      }
+      {
+        _id: ObjectId("6544bc21ac0cdc4b87fbf119"),
+        firstName: 'Jame',
+        lastName: 'Doe',
+        salary: '35000',
+        department: 'Accounts',
+        lastCompany: 'Z',
+        lastSalary: '15000',
+        overallExp: '2',
+        contactInfo: '123567890',
+        yearGrad: '2019',
+        gradStream: 'EEE'
+      }
+      {
+        _id: ObjectId("6544bc21ac0cdc4b87fbf11d"),
+        firstName: 'Jame',
+        lastName: 'Doe',
+        salary: '35000',
+        department: 'Accounts',
+        lastCompany: 'Z',
+        lastSalary: '15000',
+        overallExp: '2',
+        contactInfo: '123567890',
+        yearGrad: '2019',
+        gradStream: 'EEE'
+      }</pre>
+
+
+      <h2>Q5.Query the collection "employee" and update the salary of the employee whose salary is greater than 70000 to 65000.</h2>
+      <p><b>Solution-</b>db.employee.updateMany({"salary":{$gt: "70000"} }, {$set: {"salary":"65000"}})</p>
+      <pre>
+        {
+            acknowledged: true,
+            insertedId: null,
+            matchedCount: 0,
+            modifiedCount: 0,
+            upsertedCount: 0
+          }
+      </pre>
+      <h2>Q6.Delete all the documents from "employee" where last company is Y"</h2>
+      <p><b>Solution-</b>db.employee.deleteMany({"lastCompany": "Y"})</p>
+      <pre>
+        {
+            acknowledged: true,
+            deletedCount: 6
+          }
+      </pre>
+</body>
+</html>
